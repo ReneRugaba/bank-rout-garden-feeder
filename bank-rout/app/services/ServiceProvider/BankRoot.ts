@@ -5,9 +5,7 @@ import PaginationInterface from "../paginationInterface";
 import Gender from "App/Models/Gender";
 import createCustomerDto from "App/Models/DTO/createCustomerDto";
 import CustomerDto from "App/Models/DTO/customerDto";
-import Account from "App/Models/Account";
 import AccountDto from "App/Models/DTO/accountDto";
-import Transfer from "App/Models/Transfer";
 import TransferDto from "App/Models/DTO/transfertDto";
 
 
@@ -34,15 +32,7 @@ export default class BankRootService implements BankrootInteface {
         let resultAccount = await Database.rawQuery('select * from accounts where customer_id=?',[customerDto.id])
         customerDto.accounts = resultAccount.rows as AccountDto[]
         
-        // customerDto.accounts.map(async(account)=>{
-          
-        //     let result=await Database.rawQuery('select * from transfers where account_id=?',[account.id])
-            
-        //     account.transfer=result.rows as TransferDto[]
-           
-        // })
         
-        // customerDto.accounts=arrayTransferDto
         
         
         return customerDto

@@ -1,4 +1,4 @@
-import { DateTime, NumberUnitLength } from 'luxon'
+import { DateTime } from 'luxon'
 import { BaseModel, column, HasMany, hasMany } from '@ioc:Adonis/Lucid/Orm'
 import TransferType from './TransferType'
 
